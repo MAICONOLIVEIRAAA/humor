@@ -1,0 +1,81 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #a0e1ff, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#pet {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a52a2a 0%, #7a1f1f 100%);
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+#pet:hover {
+  transform: scale(1.1);
+}
+
+.status-bar {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.progress {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 15px;
+  transition: width 0.3s ease;
+}
+
+#hunger-bar {
+  background-color: #ff7f50;
+}
+
+#happiness-bar {
+  background-color: #32cd32;
+}
+
+#health-bar {
+  background-color: #ff4500;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #45a049;
+}

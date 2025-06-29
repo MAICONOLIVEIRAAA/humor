@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Pou</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <h1>Mini Pou</h1>
+    <div id="pet">:|</div>
+
+    <div class="status-bar">
+      Fome:
+      <div class="progress">
+        <div id="hunger-bar" class="progress-bar" style="width: 50%"></div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      Felicidade:
+      <div class="progress">
+        <div id="happiness-bar" class="progress-bar" style="width: 50%"></div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      Saúde:
+      <div class="progress">
+        <div id="health-bar" class="progress-bar" style="width: 100%"></div>
+      </div>
+    </div>
+
+    <button onclick="feedPet()">🍔 Alimentar</button>
+    <button onclick="playWithPet()">🎮 Brincar</button>
+    <button onclick="sleepPet()">😴 Dormir</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
