@@ -1,81 +1,51 @@
-body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  text-align: center;
-  background: linear-gradient(to bottom, #a0e1ff, #ffffff);
-  margin: 0;
-  padding: 0;
+let hunger = 50; // Fome inicia em 50%
+let happiness = 50; // Felicidade inicia em 50%
+let health = 100; // Saúde inicia em 100%
+
+const pet = document.getElementById('pet');
+const hungerBar = document.getElementById('hunger-bar');
+const happinessBar = document.getElementById('happiness-bar');
+const healthBar = document.getElementById('health-bar');
+const moodText = document.getElementById('mood-text');
+
+function updateMood() {
+  // Atualiza o rosto do pet
+  if (happiness <= 30) {
+    pet.innerText = "😔"; // Pet triste
+    moodText.innerText = "Você está se sentindo triste hoje.";
+  } else if (happiness <= 70) {
+    pet.innerText = "😐"; // Pet neutro
+    moodText.innerText = "Você está se sentindo neutro hoje.";
+  } else {
+    pet.innerText = "😄"; // Pet feliz
+    moodText.innerText = "Você está se sentindo muito feliz hoje!";
+  }
+
+  // Atualiza as barras de status
+  hungerBar.style.width = hunger + "%";
+  happinessBar.style.width = happiness + "%";
+  healthBar.style.width = health + "%";
 }
 
-#game-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+function feedPet() {
+  hunger = Math.max(hunger - 20, 0); // Reduz a fome, mínimo 0
+  happiness = Math.min(happiness + 10, 100); // Aumenta felicidade, máximo 100
+  updateMood();
 }
 
-#pet {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #a52a2a 0%, #7a1f1f 100%);
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
+function playWithPet() {
+  happiness = Math.min(happiness + 20, 100); // Aumenta a felicidade, máximo 100
+  hunger = Math.min(hunger + 10, 100); // Aumenta a fome
+  health = Math.max(health - 10, 0); // Diminui saúde se brincar muito
+  updateMood();
 }
 
-#pet:hover {
-  transform: scale(1.1);
+function sleepPet() {
+  health = Math.min(health + 20, 100); // Aumenta saúde
+  happiness = Math.max(happiness - 10, 0); // Diminui felicidade se dormindo muito
+  hunger = Math.max(hunger - 10, 0); // Fome diminui
+  updateMood();
 }
 
-.status-bar {
-  margin: 10px 0;
-  font-size: 1.2em;
-}
-
-.progress {
-  width: 100%;
-  background-color: #eee;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.progress-bar {
-  height: 15px;
-  transition: width 0.3s ease;
-}
-
-#hunger-bar {
-  background-color: #ff7f50;
-}
-
-#happiness-bar {
-  background-color: #32cd32;
-}
-
-#health-bar {
-  background-color: #ff4500;
-}
-
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  border-radius: 10px;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-button:hover {
-  background-color: #45a049;
-}
+// Inicializa o estado do jogo
+updateMood();
