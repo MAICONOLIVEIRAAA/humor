@@ -1,55 +1,71 @@
-let hunger = 50;
-let happiness = 50;
-let health = 100;
-
-const pet = document.getElementById("pet");
-const hungerBar = document.getElementById("hunger-bar");
-const happinessBar = document.getElementById("happiness-bar");
-const healthBar = document.getElementById("health-bar");
-
-function updatePet() {
-  hunger = Math.max(0, Math.min(100, hunger));
-  happiness = Math.max(0, Math.min(100, happiness));
-  health = Math.max(0, Math.min(100, health));
-
-  hungerBar.style.width = hunger + "%";
-  happinessBar.style.width = happiness + "%";
-  healthBar.style.width = health + "%";
-
-  if (hunger < 30 || happiness < 30 || health < 30) {
-    pet.textContent = "😢";
-  } else if (hunger > 70 && happiness > 70 && health > 70) {
-    pet.textContent = "😄";
-  } else {
-    pet.textContent = "😐";
-  }
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-function feedPet() {
-  hunger += 15;
-  health += 5; // Alimentar também melhora a saúde
-  updatePet();
+#game-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
-function playWithPet() {
-  happiness += 15;
-  hunger -= 5;
-  health -= 2; // Brincar diminui um pouco a saúde
-  updatePet();
+#pet {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
-function sleepPet() {
-  happiness += 10;
-  hunger -= 10;
-  health += 5; // Dormir melhora a saúde
-  updatePet();
+.status-bar {
+  margin: 10px 0;
 }
 
-setInterval(() => {
-  hunger -= 2;
-  happiness -= 2;
-  health -= 1; // A saúde diminui com o tempo se não for cuidada
-  updatePet();
-}, 3000);
+.progress {
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+}
 
-updatePet();
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+}
+
+#hunger-bar {
+  background-color: #ff6347; /* vermelho */
+}
+
+#happiness-bar {
+  background-color: #32cd32; /* verde */
+}
+
+#health-bar {
+  background-color: #1e90ff; /* azul */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#happiness-bar {
+  background-color: #ffeb3b;
+}
