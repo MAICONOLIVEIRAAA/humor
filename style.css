@@ -7,6 +7,7 @@ body {
   margin: 0;
   background-color: #f0f0f0;
   color: #333;
+  transition: background-color 0.3s;
 }
 
 #game-container {
@@ -21,6 +22,7 @@ body {
 #pet {
   font-size: 80px;
   margin-bottom: 20px;
+  transition: transform 0.3s ease;
 }
 
 #mood-text {
@@ -28,10 +30,8 @@ body {
   margin-bottom: 20px;
 }
 
-.mood-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.mood-buttons, .intensity-buttons, .pet-options {
+  margin-top: 20px;
 }
 
 button {
@@ -51,4 +51,26 @@ button:hover {
 
 button:focus {
   outline: none;
+}
+
+#history-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#history-list li {
+  background-color: #f1f1f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#game-container.night-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+#game-container.night-mode button {
+  background-color: #333;
+  color: #fff;
 }
