@@ -1,51 +1,54 @@
-let hunger = 50; // Fome inicia em 50%
-let happiness = 50; // Felicidade inicia em 50%
-let health = 100; // Saúde inicia em 100%
-
-const pet = document.getElementById('pet');
-const hungerBar = document.getElementById('hunger-bar');
-const happinessBar = document.getElementById('happiness-bar');
-const healthBar = document.getElementById('health-bar');
-const moodText = document.getElementById('mood-text');
-
-function updateMood() {
-  // Atualiza o rosto do pet
-  if (happiness <= 30) {
-    pet.innerText = "😔"; // Pet triste
-    moodText.innerText = "Você está se sentindo triste hoje.";
-  } else if (happiness <= 70) {
-    pet.innerText = "😐"; // Pet neutro
-    moodText.innerText = "Você está se sentindo neutro hoje.";
-  } else {
-    pet.innerText = "😄"; // Pet feliz
-    moodText.innerText = "Você está se sentindo muito feliz hoje!";
-  }
-
-  // Atualiza as barras de status
-  hungerBar.style.width = hunger + "%";
-  happinessBar.style.width = happiness + "%";
-  healthBar.style.width = health + "%";
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-function feedPet() {
-  hunger = Math.max(hunger - 20, 0); // Reduz a fome, mínimo 0
-  happiness = Math.min(happiness + 10, 100); // Aumenta felicidade, máximo 100
-  updateMood();
+#game-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
-function playWithPet() {
-  happiness = Math.min(happiness + 20, 100); // Aumenta a felicidade, máximo 100
-  hunger = Math.min(hunger + 10, 100); // Aumenta a fome
-  health = Math.max(health - 10, 0); // Diminui saúde se brincar muito
-  updateMood();
+#pet {
+  font-size: 80px;
+  margin-bottom: 20px;
 }
 
-function sleepPet() {
-  health = Math.min(health + 20, 100); // Aumenta saúde
-  happiness = Math.max(happiness - 10, 0); // Diminui felicidade se dormindo muito
-  hunger = Math.max(hunger - 10, 0); // Fome diminui
-  updateMood();
+#mood-text {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-// Inicializa o estado do jogo
-updateMood();
+.mood-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:focus {
+  outline: none;
+}
