@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Como você está hoje?</title>
+  <title>Como Você Está Hoje?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="game-container">
-    <h1>Como você está hoje?</h1>
+    <h1>Como Você Está Hoje?</h1>
+
+    <!-- Pet com humor dinâmico -->
     <div id="pet">😐</div>
     <div id="mood-text">Escolha um humor para o seu pet!</div>
 
+    <!-- Botões de humor -->
     <div class="mood-buttons">
       <button onclick="setMood('feliz')">😊 Feliz</button>
       <button onclick="setMood('alegre')">😁 Alegre</button>
@@ -19,6 +22,30 @@
       <button onclick="setMood('bravo')">😡 Bravo</button>
       <button onclick="setMood('triste')">😔 Triste</button>
     </div>
+
+    <!-- Controle de intensidade de humor -->
+    <div class="intensity-buttons">
+      <button onclick="adjustMood('aumentar')">😄 Aumentar Humor</button>
+      <button onclick="adjustMood('diminuir')">😔 Diminuir Humor</button>
+    </div>
+
+    <!-- Histórico de humores -->
+    <div id="mood-history">
+      <h3>Histórico de Humores</h3>
+      <ul id="history-list">
+        <!-- Histórico será gerado aqui -->
+      </ul>
+    </div>
+
+    <!-- Opções de personalização de pet -->
+    <div class="pet-options">
+      <button onclick="changePet('gato')">🐱 Mudar para Gato</button>
+      <button onclick="changePet('cachorro')">🐶 Mudar para Cachorro</button>
+      <button onclick="changePet('alien')">👽 Mudar para Alien</button>
+    </div>
+
+    <!-- Alternância entre modo dia e modo noite -->
+    <button onclick="toggleNightMode()">🌙 Modo Noite/Dia</button>
   </div>
 
   <script src="script.js"></script>
