@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Como Você Está Hoje?</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Web - Desenvolvedor</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="game-container">
-    <h1>Como Você Está Hoje?</h1>
+  <header>
+    <h1>Meu Portfólio Web</h1>
+    <p>Desenvolvedor Front-End | HTML, CSS, JavaScript</p>
+    <button onclick="toggleDarkMode()">🌙 Modo Escuro</button>
+  </header>
 
-    <!-- Pet com humor dinâmico -->
-    <div id="pet">😐</div>
-    <div id="mood-text">Escolha um humor para o seu pet!</div>
-
-    <!-- Botões de humor -->
-    <div class="mood-buttons">
-      <button onclick="setMood('feliz')">😊 Feliz</button>
-      <button onclick="setMood('alegre')">😁 Alegre</button>
-      <button onclick="setMood('neutro')">😐 Neutro</button>
-      <button onclick="setMood('bravo')">😡 Bravo</button>
-      <button onclick="setMood('triste')">😔 Triste</button>
+  <section class="catalogo">
+    <div class="projeto">
+      <img src="https://via.placeholder.com/600x400?text=Projeto+1" alt="Projeto 1">
+      <div class="projeto-content">
+        <h3>Landing Page de Agência</h3>
+        <p>Uma página moderna e responsiva para uma agência de marketing.</p>
+        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+        <div class="links">
+          <a href="#">Ver Online</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Controle de intensidade de humor -->
-    <div class="intensity-buttons">
-      <button onclick="adjustMood('aumentar')">😄 Aumentar Humor</button>
-      <button onclick="adjustMood('diminuir')">😔 Diminuir Humor</button>
+    <div class="projeto">
+      <img src="https://via.placeholder.com/600x400?text=Projeto+2" alt="Projeto 2">
+      <div class="projeto-content">
+        <h3>Portfólio Pessoal</h3>
+        <p>Um modelo de portfólio simples para desenvolvedores iniciantes.</p>
+        <p><strong>Tecnologias:</strong> HTML, CSS</p>
+        <div class="links">
+          <a href="#">Ver Online</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Histórico de humores -->
-    <div id="mood-history">
-      <h3>Histórico de Humores</h3>
-      <ul id="history-list">
-        <!-- Histórico será gerado aqui -->
-      </ul>
+    <div class="projeto">
+      <img src="https://via.placeholder.com/600x400?text=Projeto+3" alt="Projeto 3">
+      <div class="projeto-content">
+        <h3>Dashboard Interativa</h3>
+        <p>Painel de controle com gráficos e dados simulados.</p>
+        <p><strong>Tecnologias:</strong> HTML, CSS, JS (Chart.js)</p>
+        <div class="links">
+          <a href="#">Ver Online</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Opções de personalização de pet -->
-    <div class="pet-options">
-      <button onclick="changePet('gato')">🐱 Mudar para Gato</button>
-      <button onclick="changePet('cachorro')">🐶 Mudar para Cachorro</button>
-      <button onclick="changePet('alien')">👽 Mudar para Alien</button>
-    </div>
+  <footer>
+    <p>© 2025 - Seu Nome. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Alternância entre modo dia e modo noite -->
-    <button onclick="toggleNightMode()">🌙 Modo Noite/Dia</button>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
